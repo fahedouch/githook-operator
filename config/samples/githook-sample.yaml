@@ -1,0 +1,22 @@
+apiVersion: tools.my.domain/v1alpha1
+kind: GitHook
+metadata:
+  name: githook-sample
+  namespace: githook-tutorial-system
+spec:
+  gitProvider: gitlab
+  eventTypes:
+  - push
+  - issue_comment
+  - pull_request
+  projectUrl: "https://gitlab-snapshot.hubside.com/fdorgaa/test-project" #replace this with your test repo
+  accessToken:
+    secretKeyRef:
+      name: gitsecret
+      key: accessToken
+  secretToken:
+    secretKeyRef:
+      name: gitsecret
+      key: secretToken
+status:
+  Id: aebc3ffds

@@ -1,0 +1,16 @@
+domain: my.domain
+layout:
+- go.kubebuilder.io/v3
+projectName: githook-tutorial
+repo: gitlab.com/pongsatt/githook
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: my.domain
+  group: tools
+  kind: GitHook
+  path: gitlab.com/pongsatt/githook/api/v1alpha1
+  version: v1alpha1
+version: "3"
